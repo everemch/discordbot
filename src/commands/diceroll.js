@@ -1,19 +1,23 @@
+/*
+ * Diceroll start menu 
+ */
+
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
-const cointoss = new ButtonBuilder()
-    .setCustomId('cointoss')
-    .setLabel('Coin Toss')
+const dieButton = new ButtonBuilder()
+    .setCustomId('diceroll')
+    .setLabel('Roll')
     .setStyle(ButtonStyle.Secondary);
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('cointoss')
-		.setDescription('Toss a coin!'),
+		.setName('diceroll')
+		.setDescription('Roll a die!'),
 	async execute(interaction) {
         const row = new ActionRowBuilder()
         .addComponents(
-            cointoss
+            dieButton
         );
-        await interaction.reply({ content: 'Toss the coin!', ephemeral: 'true', components: [row] });
+        await interaction.reply({ content: 'Roll!', ephemeral: 'true', components: [row] });
 	},
 };

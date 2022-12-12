@@ -1,19 +1,23 @@
+/*
+ * Cointoss start menu 
+ */
+
 const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
-const dieButton = new ButtonBuilder()
-    .setCustomId('diceroll')
-    .setLabel('Roll')
+const cointoss = new ButtonBuilder()
+    .setCustomId('cointoss')
+    .setLabel('Coin Toss')
     .setStyle(ButtonStyle.Secondary);
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('diceroll')
-		.setDescription('Roll a die!'),
+		.setName('cointoss')
+		.setDescription('Toss a coin!'),
 	async execute(interaction) {
         const row = new ActionRowBuilder()
         .addComponents(
-            dieButton
+            cointoss
         );
-        await interaction.reply({ content: 'Roll!', ephemeral: 'true', components: [row] });
+        await interaction.reply({ content: 'Toss the coin!', ephemeral: 'true', components: [row] });
 	},
 };

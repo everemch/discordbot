@@ -1,3 +1,7 @@
+/*
+ * Select menu for a variety of included games 
+ */
+
 const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
 
 module.exports = {

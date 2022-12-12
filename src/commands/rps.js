@@ -1,4 +1,8 @@
-const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+/*
+ * Rock Paper Scissors start menu 
+ */
+
+const  { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 const rockButton = new ButtonBuilder()
     .setCustomId('rock')
